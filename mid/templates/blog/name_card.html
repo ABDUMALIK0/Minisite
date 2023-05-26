@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <h3> 사용된 명함 템플릿 </h3>
+    <h3>NAMECARD(Option 1)</h3>
+    {% if item.rank == 'CEO' %}
+    <div class="media bg-info text-white d-inline-flex p-2">
+    {% elif item.rank == 'manager' %}
+    <div class="media bg-warning text-white d-inline-flex p-2">
+    {% else %}
+    <div class="media bg-secondary text-white d-inline-flex p-2">
+    {% endif %}
+        <div class="media-body">
+          <h5 class="mt-0">{{ item.name }} [{{ item.rank }}]</h5>
+          <p>우리나라 연구소</p>
+          <p class="mb-0 ml-5">Tel: 010-000-0000</p>
+          <p class="mb-0 ml-5">Email: sample@sample.com</p>
+        </div>
+
+    </div>
+{% endblock %}
