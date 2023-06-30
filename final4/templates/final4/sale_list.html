@@ -1,0 +1,33 @@
+{% extends 'final4/base.html'%}
+
+{% block main_area %}
+
+<h2>Product List in Cart [{{sale.user}}]</h2>
+
+      <!-- 구매 내역이 있는 사용자가 로그인한 경우-->
+      {% for item in sale%}
+        <div>
+          <div class="media border border-primary d-inline-block-flex p-2">
+            <div class="media-body">
+              <h4 class="mt-0">{{item.name}}</h4>
+              <p class="mb-1">{{item.description}}</p>
+              <span class="mb-1">{{item.count}}</span>              
+            </div>
+          </div>
+        </div>
+   
+        
+        <div class="card">
+          <div class = "card-header">
+            <h4 >전체 구매 금액은 6460 입니다.</h4>
+          </div>
+        </div>       
+     
+        
+        <!-- 구매 내역이 없는 사용자의 경우 -->
+        <h3>아직 카트에 담긴 상품이 없습니다.</h3>
+
+        <br><br>
+        {%endfor%}
+
+{% endblock %}

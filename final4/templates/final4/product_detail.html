@@ -1,0 +1,45 @@
+{% extends 'final4/base.html'%}
+
+{%block main_area %}
+
+<h3> 구매 페이지 template </h3>
+
+      <div id="product-area">
+        <!-- Product header-->
+        <header class="mb-4">
+            <!-- Product title-->
+            <h1 class="fw-bolder mb-1">{{product.name}}</h1>
+        </header>
+        <!-- Preview image figure-->
+        <figure class="mb-4">
+            <img class="img-fluid rounded" src="https://picsum.photos/seed/1/200/200" alt="random image" />
+        </figure>
+        <!-- Post content-->
+        <section class="mb-5">
+            <p class="fs-5 mb-4">{{product.description}}</p>
+            <div class="mb-1">{{product.price}}</div>
+        </section>
+    </div>
+
+    <!-- user input -->
+    <div class="card bg-light">
+        <div class="card-header">구매할 개수를 입력하세요.</div>
+        <div class="card-body">
+            <!-- 로그인 상태에서만 폼이 보임 -->
+            {% if user.is_authenticated %}
+            <form class="mb-4" id="sale-form" method="POST">
+                <div class="form-group">
+                    <!-- forms.py 파일에 별도로 작성한 폼이 위치할 곳-->
+                    {% csrf_token %}
+                    {{comment_form}}
+                </div>
+                <button type="submit" class="btn btn-outline-primary float-right">구매하기</button>                                
+            </form>
+            <!-- 로그인 안되어 있는 경우 보이는 내용 -->
+            {% else %}
+            <a role="button" class="btn btn-outline-dark btn-block btn-sm"
+                href="#" data-toggle="modal" data-target="#loginModal">Log In 후 구매 가능</a>   
+            {%endif%}         
+        </div>
+    </div>
+{% endblock %}

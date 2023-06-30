@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'final4/css/final.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'final4/css/final.min.css.map' %}" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    <header>
+        {%include 'final4/navbar.html'%}
+    </header>
+    <div class="row">
+    <div class="media col">
+        <img src="https://loremflickr.com/200/200/" class="mr-3" alt="...">
+        <div class="media-body">
+          <h5 class="mt-0">제품 판매 사이트</h5>
+          <p> 사이트에 오신 것을 환영합니다. </p>
+          <p>dummy text -
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet, at atque cupiditate delectus dignissimos doloremque et facere illum laudantium mollitia nobis officiis quibusdam quis, repellendus sequi sint, unde voluptatem.
+          </p>
+        </div>
+      </div>
+      <hr>
+    
+      <h3> Information Widget</h3>
+    
+      <div class="card col">
+        <div class="card-header">
+            <h5 class="mt-0">Infomation Widget</h5>
+        </div>
+        <div class="card-body">
+            <p> home 페이지에 오신 것을 환영합니다. </p>                  
+        </div>
+      </div>
+    </div>
+</body>
+</html>
