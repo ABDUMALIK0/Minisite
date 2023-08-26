@@ -1,0 +1,15 @@
+{% extends 'blog/index.html' %}
+
+{% block title %}Add Tag - Blog{% endblock title %}
+
+{% block content %}
+<h1>Add Tag</h1>
+<hr>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <button type="submit" class="btn btn-primary float-right">Submit</button>
+</form>
+{% endblock content%}

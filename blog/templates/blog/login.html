@@ -1,0 +1,14 @@
+{% extends 'blog/index.html' %}
+{% block title %}Log in{% endblock title %}
+
+{% block content %}
+<h1>Log in</h1>
+<hr>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <button type="submit" class="btn btn-primary float-right">Submit</button>
+</form>
+{% endblock content %}
